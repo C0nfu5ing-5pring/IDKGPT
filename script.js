@@ -1,6 +1,8 @@
 const input = document.querySelector(".chat-input input");
 const chatArea = document.querySelector(".chat-area");
 const submitBtn = document.querySelector(".submit");
+const cursor = document.querySelector(".cursor");
+let lag = 0.02;
 
 function userMessage(message) {
   const userMessageDiv = document.createElement("div");
@@ -23,6 +25,15 @@ function GPTMessage() {
 
   chatArea.appendChild(GPTMessageDiv);
 }
+
+window.addEventListener("mousemove", (e) => {
+  lag += 0.005;
+  gsap.to(cursor, {
+    x: e.clientX,
+    y: e.clientY,
+    duration: lag,
+  });
+});
 
 submitBtn.addEventListener("click", function () {
   userMessage(input.value);

@@ -13,6 +13,7 @@ body {
   max-height: 100vh;
   max-width: 100%;
   overflow: hidden;
+  cursor: none;
 }
 
 @keyframes rotate {
@@ -158,4 +159,14 @@ body {
   box-shadow: -6px 6px 0 black;
   transform: rotate(-5deg) scale(0.95);
   animation: shake 0.15s infinite alternate;
+}
+
+.cursor {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 128px;
+  height: 128px;
+  z-index: 99;
 }
