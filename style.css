@@ -1,0 +1,8 @@
+@font-face {
+  font-family: ugh;
+  src: url(fonts/ugh.ttf);
+}
+
+body {
+  font-family: ugh;
+}
