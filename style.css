@@ -3,6 +3,65 @@
   src: url(fonts/ugh.ttf);
 }
 
-body {
+* {
   font-family: ugh;
+}
+
+body {
+  background: blue;
+  color: white;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(69deg);
+  }
+  25% {
+    transform: rotate(1deg);
+  }
+  50% {
+    transform: rotate(240deg);
+  }
+  100% {
+    transform: rotate(360deg) een;
+  }
+}
+
+.header {
+  margin: 4rem 3rem 0 3rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-left {
+  animation-name: rotate;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.header-right {
+  display: flex;
+  gap: 1rem;
+}
+
+.header-right-btn {
+  cursor: not-allowed;
+  background: palevioletred;
+  padding: 10px;
+  height: fit-content;
+  font-size: 0.9rem;
+  color: white;
+}
+
+.btn-one {
+  transform: skewY(15deg);
+}
+
+.btn-two {
+  transform: skewY(-25deg);
+}
+
+.header-right-btn:active {
+  transform: scale(0.95);
 }
