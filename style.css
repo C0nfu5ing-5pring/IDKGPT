@@ -10,6 +10,9 @@
 body {
   background: blue;
   color: white;
+  max-height: 100vh;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 @keyframes rotate {
@@ -24,6 +27,26 @@ body {
   }
   100% {
     transform: rotate(360deg) een;
+  }
+}
+
+@keyframes wobble {
+  from {
+    transform: rotate(4deg) scale(1.05);
+  }
+
+  to {
+    transform: rotate(8deg) scale(1.1);
+  }
+}
+
+@keyframes shake {
+  from {
+    transform: rotate(-6deg);
+  }
+
+  to {
+    transform: rotate(-2deg);
   }
 }
 
@@ -64,4 +87,75 @@ body {
 
 .header-right-btn:active {
   transform: scale(0.95);
+}
+
+#main-container {
+  background: brown;
+  height: 65vh;
+  margin-top: 3rem;
+  border: 10px black solid;
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+}
+
+.chat-area {
+  height: 80vh;
+  background: red;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-input {
+  width: 100%;
+  display: flex;
+}
+
+.chat-input input {
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 2rem;
+}
+
+.submit {
+  background: blue;
+  color: white;
+  cursor: pointer;
+}
+
+.submit:active {
+  transform: scale(0.8);
+}
+
+.userMessageDiv {
+  background: white;
+  color: black;
+  border-radius: 100%;
+  padding: 0.6rem 0.9rem;
+  max-width: 45%;
+  align-self: flex-end;
+  margin: 0.5rem;
+  color: black;
+  text-align: center;
+  position: absolute;
+  transform: rotate(6deg) scale(1.05);
+  box-shadow: 6px 6px 0 black;
+  animation: wobble 0.3s infinite alternate;
+}
+
+.GPTMessageDiv {
+  background: yellow;
+  color: blue;
+  border-radius: 100%;
+  padding: 0.6rem 0.9rem;
+  max-width: 45%;
+  align-self: flex-start;
+  margin: 0.5rem;
+  color: black;
+  text-align: center;
+  position: absolute;
+  box-shadow: -6px 6px 0 black;
+  transform: rotate(-5deg) scale(0.95);
+  animation: shake 0.15s infinite alternate;
 }
