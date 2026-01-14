@@ -3,6 +3,7 @@ const chatArea = document.querySelector(".chat-area");
 const submitBtn = document.querySelector(".submit");
 const cursor = document.querySelector(".cursor");
 let lag = 0.02;
+let chaos = 0;
 
 function userMessage(message) {
   const userMessageDiv = document.createElement("div");
@@ -42,3 +43,8 @@ submitBtn.addEventListener("click", function () {
     GPTMessage();
   }, 1000);
 });
+
+setInterval(() => {
+  chaos += 5;
+  document.body.style.filter = `hue-rotate(${chaos}deg)`;
+}, 1000);
